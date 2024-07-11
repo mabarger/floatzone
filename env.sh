@@ -12,10 +12,7 @@ export FLOATZONE_MODE="floatzone double_sided"
 #export FLOATZONE_MODE="floatzone double_sided just_size"
 
 #CHANGME depending on where you cloned the floatzone repo!
-export FLOATZONE_TOP=/home/sec23_ae/floatzone
-
-#CHANGME depending on where you installed SPEC
-export FLOATZONE_SPEC06=/home/sec23_ae/spec06
+export FLOATZONE_TOP=/home/max/floatzone
 
 export FLOATZONE_LLVM=$FLOATZONE_TOP/floatzone-llvm-project/llvm/
 
@@ -37,8 +34,9 @@ export FLOATZONE_XED_INC_OBJ=$FLOATZONE_XED/obj/
 export WRAP_DIR=$FLOATZONE_TOP/runtime/ 
 export FLOATZONE_LIBWRAP_SO=$WRAP_DIR/libwrap.so
 
-
 export FLOATZONE_INFRA=$FLOATZONE_TOP/instrumentation-infra/
+
+export AFLPP=$FLOATZONE_TOP/AFLplusplus
 
 #Suggested for better benchmarking
 #echo "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor

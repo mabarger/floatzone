@@ -10,3 +10,6 @@
 [submodule "instrumentation-infra"]
 	path = instrumentation-infra
 	url = https://github.com/vusec/instrumentation-infra.git
+[submodule "AFLplusplus"]
+	path = AFLplusplus
+	url = git@github.com:AFLplusplus/AFLplusplus.git

@@ -60,6 +60,18 @@ then
   fi
 fi
 
+# AFLplusplus
+if [[ ! -f $AFLPP ]]
+then
+    cd $AFLPP
+    PATH_BAK=$PATH
+    export PATH="$FLOATZONE_LLVM_BUILD/bin/:$PATH"
+    unset FLOATZONE_MODE
+    make clean
+    make -j
+    export PATH=$PATH_BAK
+fi
+
 #Always compile wrap.so
 cd $WRAP_DIR
 make
@@ -69,27 +81,5 @@ then
   exit -1
 fi
 
-#Check if SPEC2006 is installed
-#if [[ ! -d $FLOATZONE_SPEC06 ]]
-#then
-#  echo "Missing spec 2006 installation"
-#  mkdir -p /tmp/spec06
-#  sudo mount -o loop $FLOATZONE_SPEC06_ISO /tmp/spec06
-#  cd /tmp/spec06
-#  ./install.sh -f -d $FLOATZONE_SPEC06
-#  sudo umount /tmp/spec06
-#fi
-#
-##Check if SPEC2017 is installed
-#if [[ ! -d $FLOATZONE_SPEC17 ]]
-#then
-#  echo "Missing spec 2017 installation"
-#  mkdir -p /tmp/spec17
-#  sudo mount -o loop $FLOATZONE_SPEC17_ISO /tmp/spec17
-#  cd /tmp/spec17
-#  ./install.sh -f -d $FLOATZONE_SPEC17
-#  sudo umount /tmp/spec17
-#fi
-#
 cd $BAK_DIR
 export FLOATZONE_MODE=$BAK_MODE
